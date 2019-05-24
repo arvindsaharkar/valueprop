@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-10 col-lg-10">
+    <h3 class="page-title">{{oper}} {{screenTitle}}</h3>
+  </div>
+  <div class="col-md-2 col-lg-2 text-right"></div>
+</div>
+<form role="form" ngNativeValidate #customerForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="vpDesc">Description </label>
+    <textarea class="form-control" name="vpDesc" id="vpDesc" [(ngModel)]="vpp.productDesc" required #desc="ngModel">{{vpp.productDesc}}</textarea>
+    <!-- <div [hidden]="desc.valid || desc.pristine"
+            class="alert alert-danger">
+        Description is required
+      </div> -->
+  </div>
+  <div class="padd-top-10"></div>
+  <div class="padd-top-10"></div>
+  <div class="padd-top-10"></div>
+  <div class="padd-top-10"></div>
+  <div class="row"><div class="col-md-12 col-lg-12 text-right"><button type="button" class="btn btn-primary btn-md" data-toggle="modal" href="#modal-container-547254" (click)="editQuestion()"><i class="fa fa-plus"></i> Add Questions</button></div></div>
+  <table class="table table-striped table-hover" *ngIf="questions?.length > 0">
+    <tbody>
+      <tr *ngFor="let item of questions; let i = index">
+        <td (click)="editQuestion(i)">{{item.questionDesc}}</td>
+        <td>
+          <a (click)="editQuestion(i)"><i class="fa fa-pencil-square-o" ></i></a> &nbsp;
+          <a (click)="deleteQuestion(item.questionId)" href="javascript:void(0)"><i class="fa fa-trash-o" ></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="questions?.length == 0"><div class="alert alert-info">Questions not found, kindly create questions using above add button.</div></div>
+
+  <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+  <button type="button" class="btn btn-secondary" [routerLink]="['/', vpId, segmentName]">Back</button>
+</form>
+
+
+<div class="modal always-show" id="modal-container-547254" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  *ngIf="showModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form role="form" ngNativeValidate (ngSubmit)="saveQuestion()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">{{questOper}} Question</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="toggleModal()">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <textarea class="form-control" [(ngModel)]="questObj.questionDesc" [ngModelOptions]="{standalone: true}" required>{{questObj.questionDesc}}</textarea>
+        </div>
+        <div class="modal-footer">
+
+          <button type="submit" class="btn btn-primary">
+            Save
+          </button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="toggleModal()">
+            Close
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+<div class="modal-background" *ngIf="showModal"></div>

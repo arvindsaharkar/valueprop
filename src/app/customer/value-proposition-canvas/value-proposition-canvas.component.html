@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-2 col-lg-2">
+      <h3 class="page-title">Value Proposition</h3>
+    </div>
+    <div class="col-md-8 col-lg-8">
+      <input type="text" class="form-control" name="searchVP" id="searchVP" [(ngModel)]="searchVP" placeholder="Search Value Proposition" (ngModelChange)="searchVPFunction()" [ngModelOptions]="{standalone: true}"
+      required=true #name="ngModel" />
+    </div>
+    <div class="col-md-2 col-lg-2 text-right"><button type="button" class="btn btn-primary btn-md"  [routerLink]="['edit', 0]"><i class="fa fa-plus"></i> Add</button></div>
+  </div>
+  <div class="padd-top-10"></div>
+  <div [innerHTML]="msg"></div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of canvases" >
+        <td [routerLink]="[item.valuePropositionId]">{{item.valuePropositionName}}</td>
+        <td>
+          <a [routerLink]="['edit', item.valuePropositionId]" title="Edit"><i class="fa fa-pencil-square-o" ></i></a> &nbsp;
+          <a [routerLink]="[item.valuePropositionId]" title="Value Proposition Segments"><i class="fa fa-object-group" ></i></a> &nbsp;
+          <a (click)="deleteVP(item.valuePropositionId)" href="javascript:void(0)" title="Delete"><i class="fa fa-trash-o" ></i></a> &nbsp;
+          <a  [routerLink]="[item.valuePropositionId, 'chart']" title="Chart"><i class="fa fa-area-chart " ></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>

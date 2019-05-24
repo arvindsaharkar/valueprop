@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+      <h3 class="page-title">{{screenTitle}}</h3>
+    </div>
+
+  </div>
+  <div class="padd-top-10"></div>
+  <div class="row">
+      <div class="col-md-10 col-lg-10">
+          Value Proposition : <strong>{{valueProposition}}</strong>
+      </div>
+      <div class="col-md-2 col-lg-2 text-right"><button type="button" class="btn btn-primary btn-md"  [routerLink]="['edit', 0]"><i class="fa fa-plus"></i> Add</button></div>
+  </div>
+  <div [innerHTML]="msg"></div>
+  <table class="table table-striped table-hover" *ngIf="vpProducts?.length > 0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of vpProducts" >
+        <td [routerLink]="['edit', item.productId]">{{item.productDesc}}</td>
+        <td>
+          <a [routerLink]="['edit', item.productId]" title="Edit"><i class="fa fa-pencil-square-o" ></i></a> &nbsp;
+          <a (click)="deleteVPP(item.productId)" href="javascript:void(0)" title="Delete"><i class="fa fa-trash-o" ></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="" *ngIf="vpProducts?.length == 0"><div class="alert alert-info">No Records found</div></div>
+  <button type="button" class="btn btn-secondary" [routerLink]="['/', vpId]">Back</button>

@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="col-md-12 col-lg-12">
+    <h3 class="page-title">Value Proposition Chart</h3>
+  </div>
+  <div class="col-md-10 col-lg-10">
+    Value Proposition : <strong>{{valueProposition}}</strong>
+  </div>
+  <div class="col-md-2 col-lg-2 text-right"></div>
+</div>
+<div class="padd-top-10"></div>
+<div class="row">
+    <div class="col-md-6 col-lg-6 text-center font-weight-bold">Value Proposition</div>
+    <div class="col-md-6 col-lg-6 text-center font-weight-bold">Customer Segment</div>
+</div>
+<div class="row">
+  <div class="col-md-12 col-lg-12 text-center">
+    <!-- <div class='text-center font-weight-bold'>Value Proposition</div> -->
+    <svg height="500" width="1006" xmlns="http://www.w3.org/2000/svg">
+    <svg height="500" width="500" x=0 xmlns="http://www.w3.org/2000/svg">
+      <g class="text-left">
+        <rect width="450" height="450" style="fill:#f3f3f3;stroke-width:2;stroke:black" />
+        <line x1="225" y1="0" x2="225" y2="450" style="stroke:black;stroke-width:2" />
+        <line x1="225" y1="225" x2="480" y2="225" style="stroke:black;stroke-width:2" />
+        <image xlink:href="assets/images/barcode.png" height="20" width="20" x="10" [attr.y]='productsStartY-25'/>
+        <text x="40" [attr.y]='productsStartY-10' style="fill:black;stroke-width:1;stroke:black">Products and Services</text>
+        <foreignObject [attr.x]="10" [attr.y]="(lineMaxHeight*i)+productsStartY" width="205" height="40" *ngFor="let item of vpDetails.products; let i=index">
+            &#x25CF; {{item.productDesc}}
+        </foreignObject>
+      
+        <image xlink:href="assets/images/up-chart.png" height="20" width="20" x="235" y="5"/>
+        <text x="265" y="20" style="fill:black;stroke-width:1;stroke:black">Gain Creators</text>
+        <foreignObject [attr.x]="235" [attr.y]="(40*i)+30" width="205" height="40" *ngFor="let item of vpDetails.gainCreators; let i=index">
+            &#x25CF; {{item.gainCreatorDesc}}
+        </foreignObject>
+      
+        <image xlink:href="assets/images/pain-reliever.png" height="20" width="20" x="250" y="230"/>
+        <text x="280" y="245" style="fill:black;stroke-width:1;stroke:black">Pain Relievers</text>
+        <foreignObject [attr.x]="235" [attr.y]="(40*i)+255" width="205" height="70" *ngFor="let item of vpDetails.painRelievers; let i=index">
+            &#x25CF; {{item.painRelieverDesc}}
+        </foreignObject>
+        <polygon points="495,225 480,215 480,235" style="fill:black;stroke:black;stroke-width:1" />
+        <image xlink:href="assets/images/giftbox.png" height="50" width="50" x="200" y="195"/>
+      </g>
+      </svg>
+    <!-- <span class='text-center font-weight-bold'>Customer Segment</div> -->
+    <svg height="500" width="506"x=500 xmlns="http://www.w3.org/2000/svg"  class="text-left">
+        <circle cx="275" cy="227" r="225" stroke="black" stroke-width="2" fill="#f3f3f3" />
+        <line x1="5" y1="225" x2="275" y2="225" style="stroke:black;stroke-width:2" />
+        <line x1="275" y1="2" x2="275" y2="452" style="stroke:black;stroke-width:2" />
+        Sorry, your browser does not support inline SVG.
+      
+        <image xlink:href="assets/images/smile.png" height="20" width="20" x="195" y="35"/>
+        <text class="svg-text-right" x="225" y="50" style="fill:black;stroke-width:1;stroke:black">Gains</text>
+        <foreignObject class="svg-text-right" [attr.x]="98" [attr.y]="(40*i)+65" width="170" height="70" *ngFor="let item of vpDetails.customerGains; let i=index">
+            &#x25CF; {{item.customerGainDesc}}
+        </foreignObject>
+      
+        <image xlink:href="assets/images/sad.png" height="20" width="20" x="185" y="230"/>
+        <text class="svg-text-right" x="215" y="245" style="fill:black;stroke-width:1;stroke:black">Pains</text>
+        <foreignObject class="svg-text-right" [attr.x]="98" [attr.y]="(40*i)+260" width="170" height="70" *ngFor="let item of vpDetails.customerPains; let i=index">
+            &#x25CF; {{item.customerPainDesc}}
+        </foreignObject>
+      
+        <image xlink:href="assets/images/customer-jobs.png" height="20" width="20" x="285" [attr.y]="customerJobsStartY-25"/>
+        <text x="310" [attr.y]="customerJobsStartY-10" style="fill:black;stroke-width:1;stroke:black">Customer Jobs</text>
+        <foreignObject [attr.x]="305" [attr.y]="(lineMaxHeight*i)+customerJobsStartY" width="170" height="70" *ngFor="let item of vpDetails.customerJobs; let i=index">
+            &#x25CF; {{item.customerJobDesc}}
+        </foreignObject>
+        <polygon points="5,225 20,215 20,235" style="fill:black;stroke:black;stroke-width:1" />
+        <image xlink:href="assets/images/face.png" height="50" width="50" x="250" y="200"/>
+      </svg>
+  
+    </svg>
+    </div>
+</div>
+
+
+
+<br>
+<button type="button" class="btn btn-secondary" [routerLink]="['/']">Back</button>
