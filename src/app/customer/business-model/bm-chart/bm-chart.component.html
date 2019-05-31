@@ -1,0 +1,120 @@
+<div class="container-fluid fnt-size-12px">
+  <div class="row">
+      <div class="col-md-12" [innerHTML]='msg'></div>
+  </div>
+  <div class="row">
+    <div class="width20 border-black" >
+      <div class="col-md-12" >
+        <span class="add-btn-chart"><i class="fa fa-plus" (click)="editBM('keypartner', 0)"></i></span>
+        <div class="page-title"><i class="fa fa-link" aria-hidden="true"></i> Key Partners</div>
+        <div class="col-md-12  border-black" *ngFor="let item of bm.businessModelKeyPartners" (click)="editBM('keypartner', item.keyPartnerId)"><span class="close-btn-chart" (click)="deleteBM('keypartner',item.keyPartnerId)"><i class="fa fa-times"></i></span>{{item.keyPartnerDesc}}</div>
+      </div>
+    </div>
+    <div class="width20 border-black">
+        <div class="col-md-12 padd-btm-15" >
+            <span class="add-btn-chart"><i class="fa fa-plus" (click)="editBM('keyactivity', 0)"></i></span>
+          <div class="page-title"><i class="fa fa-check-circle" aria-hidden="true"></i> Key Activities</div>
+          <div class="col-md-12  border-black" *ngFor="let item of bm.businessModelKeyActivitys" (click)="editBM('keyactivity', item.keyActivityId)"><span class="close-btn-chart" (click)="deleteBM('keyactivity',item.keyActivityId)"><i class="fa fa-times"></i></span>{{item.keyActivityDesc}}</div>
+        </div>
+        <div class="col-md-12 border-black-top">
+            <span class="add-btn-chart"><i class="fa fa-plus" (click)="editBM('keyresource', 0)"></i></span>
+          <div class="page-title"><i class="fa fa-user-circle" aria-hidden="true"></i> Key Resources</div>
+          <div class="col-md-12  border-black" *ngFor="let item of bm.businessModelKeyResources" (click)="editBM('keyresource', item.keyResourceId)"><span class="close-btn-chart" (click)="deleteBM('keyresource',item.keyResourceId)"><i class="fa fa-times"></i></span>{{item.keyResourceDesc}}</div>
+        </div>
+    </div>
+    <div class="width20 border-black">
+      <div class="col-md-12">
+          <span class="add-btn-chart"><i class="fa fa-plus" (click)="editVP(0)"></i></span>
+      <div class="page-title"><i class="fa fa-gift" aria-hidden="true"></i> Value Propositions</div>
+      <div class="col-md-12  border-black" *ngFor="let item of bm.businessModelValuePropositions" (click)="editVP(item.businessModelValuePropositionId)"><span class="close-btn-chart" (click)="deleteBM('businessmodelvalueproposition',item.businessModelValuePropositionId)"><i class="fa fa-times"></i></span>{{item.valueProposition.valuePropositionName}}</div>
+      </div>
+    </div>
+    <div class="width20 border-black">
+        <div class="col-md-12 padd-btm-15" >
+            <span class="add-btn-chart"><i class="fa fa-plus" (click)="editBM('customerrelation', 0)"></i></span>
+          <div class="page-title"><i class="fa fa-heart" aria-hidden="true"></i> Customer Relationships</div>
+          <div class="col-md-12  border-black" *ngFor="let item of bm.businessModelCustomerRelations" (click)="editBM('customerrelation', item.customerRelationId)"><span class="close-btn-chart" (click)="deleteBM('customerrelation',item.customerRelationId)"><i class="fa fa-times"></i></span>{{item.customerRelationDesc}}</div>
+        </div>
+        <div class="col-md-12 border-black-top">
+            <span class="add-btn-chart"><i class="fa fa-plus" (click)="editBM('channel', 0)"></i></span>
+          <div class="page-title"><i class="fa fa-car" aria-hidden="true"></i> Channels</div>
+          <div class="col-md-12  border-black" *ngFor="let item of bm.businessModelChannels" (click)="editBM('channel', item.channelId)"><span class="close-btn-chart" (click)="deleteBM('channel',item.channelId)"><i class="fa fa-times"></i></span>{{item.channelDesc}}</div>
+        </div>
+    </div>
+    <div class="width20 border-black">
+      <div class="col-md-12" >
+          <span class="add-btn-chart"><i class="fa fa-plus" (click)="editBM('customersegment', 0)"></i></span>
+      <div class="page-title"><i class="fa fa-smile-o" aria-hidden="true"></i> Customer Segments</div>
+      <div class="col-md-12  border-black" *ngFor="let item of bm.businessModelCustomerSegments" (click)="editBM('customersegment', item.customerSegmentId)"><span class="close-btn-chart" (click)="deleteBM('customersegment',item.customerSegmentId)"><i class="fa fa-times"></i></span>{{item.customerSegmentDesc}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 border-black padd-btm-15">
+        <span class="add-btn-chart"><i class="fa fa-plus" (click)="editBM('coststructure', 0)"></i></span>
+      <div class="page-title"><i class="fa fa-tags" aria-hidden="true"></i> Cost Structure</div>
+      <div class="col-md-12  border-black" *ngFor="let item of bm.businessModelCostStructures" (click)="editBM('coststructure', item.costStructureId)"><span class="close-btn-chart" (click)="deleteBM('coststructure',item.costStructureId)"><i class="fa fa-times"></i></span>{{item.costStructureDesc}}</div>
+    </div>
+    <div class="col-md-6 border-black padd-btm-15">
+      <span class="add-btn-chart"><i class="fa fa-plus" (click)="editBM('revenuestream', 0)"></i></span>
+      <div class="page-title"><i class="fa fa-money" aria-hidden="true"></i> Revenue Streams</div>
+      <div class="col-md-12  border-black" *ngFor="let item of bm.businessModelRevenueStreams" (click)="editBM('revenuestream', item.revenueStreamId)"><span class="close-btn-chart" (click)="deleteBM('revenuestream',item.revenueStreamId)"><i class="fa fa-times"></i></span>{{item.revenueStreamDesc}}</div>
+    </div>
+  </div>
+  <div class="row"><div class="col-md-12 col-lg-12"><button type="button" class="btn btn-secondary" [routerLink]="['/', 'bm']">Back</button></div></div>
+</div>
+
+<div class="modal always-show" id="modal-container-547254" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" *ngIf="showModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form role="form" ngNativeValidate (ngSubmit)="saveSegment(segment)">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">{{popupTitle}}</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="toggleModal()">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <textarea class="form-control" [(ngModel)]="dummyObj.desc" [ngModelOptions]="{standalone: true}" required>{{dummyObj.desc}}</textarea>
+        </div>
+        <div class="modal-footer">
+
+          <button type="submit" class="btn btn-primary">
+            Save
+          </button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="toggleModal()">
+            Close
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal-background" *ngIf="showModal"></div>
+
+<div class="modal always-show" id="modal-container-547254" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" *ngIf="showModalVP">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form role="form" ngNativeValidate (ngSubmit)="saveVP()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">Value Proposition</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="toggleModalVP()">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input class="form-control" [(ngModel)]="searchVP" [ngModelOptions]="{standalone: true}" (ngModelChange)="getVPBySearch()" placeholder="Search Value Proposition">
+          <div class="padd-top-10"></div>
+          <div class="checkbox" *ngFor="let item of vpArray">
+            <label><input type="checkbox" value="1" [checked]="selectedVP.indexOf(item.valuePropositionId) != -1" (click)="getVPChecked($event, item.valuePropositionId)"> {{item.valuePropositionName}}</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="toggleModalVP()">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal-background" *ngIf="showModalVP"></div>

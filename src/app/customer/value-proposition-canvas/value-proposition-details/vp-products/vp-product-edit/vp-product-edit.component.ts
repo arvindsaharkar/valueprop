@@ -143,7 +143,7 @@ export class VpProductEditComponent implements OnInit {
       this.service.createVPProduct(vppObj, this.apiStr).subscribe((res) => {
         // this.vpp = res;
         sessionStorage.setItem('VPCreatStatus', 'New Value Propositiion ' + this.screenTitle + ' created Successfully');
-        this.router.navigate(['/', this.vpId, this.segmentName]);
+        this.router.navigate(['/', 'vp', this.vpId, this.segmentName]);
       }, error => {
 
       });
@@ -152,7 +152,7 @@ export class VpProductEditComponent implements OnInit {
       this.service.updateVPProduct(vppObj, this.apiStr).subscribe((res) => {
         // this.vpp = res;
         sessionStorage.setItem('VPCreatStatus', 'Existing Value Propositiion ' + this.screenTitle + ' edited Successfully');
-        this.router.navigate(['/', this.vpId, this.segmentName]);
+        this.router.navigate(['/', 'vp', this.vpId, this.segmentName]);
       }, error => {
       });
     }

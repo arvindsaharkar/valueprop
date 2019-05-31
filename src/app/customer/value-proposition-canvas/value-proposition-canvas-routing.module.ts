@@ -11,12 +11,12 @@ import { VpChartComponent } from './vp-chart/vp-chart.component';
 
 
 const vpRoutes: Routes = [
-  { path: '',  component: ValuePropositionCanvasComponent },
-  { path: 'edit/:vpId',  component: ValuePropositionEditComponent , data: { breadcrumb: 'Edit Value Proposition'} },
-  { path: ':vpId',  component: ValuePropositionDetailsComponent, data: { breadcrumb: 'Value Proposition details'} },
-  { path: ':vpId/chart',  component: VpChartComponent, data: { breadcrumb: 'Segment', bgColor: 'bg-white'} },
-  { path: ':vpId/:segmentName',  component: VpProductsComponent, data: { breadcrumb: 'Segment'} },
-  { path: ':vpId/:segmentName/edit/:vppId',  component: VpProductEditComponent, data: { breadcrumb: 'Edit Segment'} },
+  { path: 'vp',  component: ValuePropositionCanvasComponent },
+  { path: 'vp/edit/:vpId',  component: ValuePropositionEditComponent , data: { breadcrumb: 'Edit Value Proposition'} },
+  { path: 'vp/:vpId',  component: ValuePropositionDetailsComponent, data: { breadcrumb: 'Value Proposition details'} },
+  { path: 'vp/:vpId/chart',  component: VpChartComponent, data: { breadcrumb: 'Segment', bgColor: 'bg-white'} },
+  { path: 'vp/:vpId/:segmentName',  component: VpProductsComponent, data: { breadcrumb: 'Segment'} },
+  { path: 'vp/:vpId/:segmentName/edit/:vppId',  component: VpProductEditComponent, data: { breadcrumb: 'Edit Segment'} },
 
 ];
 

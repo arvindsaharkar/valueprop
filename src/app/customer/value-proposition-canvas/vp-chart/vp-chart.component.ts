@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {Location} from '@angular/common';
 import { AppGlobal } from '../../../shared/app.global';
 import { ChartbgService } from '../../../chartbg.service';
 
@@ -26,7 +27,8 @@ export class VpChartComponent implements OnInit, OnDestroy {
     private vpService: ValuePropositionCanvasService,
     private route: ActivatedRoute,
     private router: Router,
-    private chartbgService: ChartbgService) {
+    private chartbgService: ChartbgService,
+    private _location: Location) {
   }
 
   ngOnInit() {
@@ -59,6 +61,10 @@ export class VpChartComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.chartbgService.setColor('');
+  }
+
+  backFunction() {
+    this._location.back();
   }
 
 }

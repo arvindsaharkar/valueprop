@@ -42,7 +42,7 @@ export class ValuePropositionEditComponent implements OnInit {
       this.service.createValueProposition(this.vp).subscribe((res) => {
         this.vp = res;
         sessionStorage.setItem('VPCreatStatus', 'New Value Propositiion created Successfully');
-        this.router.navigate(['/']);
+        this.router.navigate(['/', 'vp']);
       }, error => {
 
       });
@@ -50,7 +50,7 @@ export class ValuePropositionEditComponent implements OnInit {
       this.service.updateValueProposition(this.vp).subscribe((res) => {
         this.vp = res;
         sessionStorage.setItem('VPCreatStatus', 'Existing Value Propositiion edited Successfully');
-        this.router.navigate(['/']);
+        this.router.navigate(['/', 'vp']);
       }, error => {
       });
     }

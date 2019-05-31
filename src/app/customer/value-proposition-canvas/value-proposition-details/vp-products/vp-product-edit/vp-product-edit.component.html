@@ -32,7 +32,7 @@
   <div *ngIf="questions?.length == 0"><div class="alert alert-info">Questions not found, kindly create questions using above add button.</div></div>
 
   <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
-  <button type="button" class="btn btn-secondary" [routerLink]="['/', vpId, segmentName]">Back</button>
+  <button type="button" class="btn btn-secondary" [routerLink]="['/', 'vp', vpId, segmentName]">Back</button>
 </form>
 
 

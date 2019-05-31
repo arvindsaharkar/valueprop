@@ -113,7 +113,7 @@ export class VpProductsComponent implements OnInit {
           this.msg = '<div class="alert alert-success">' + this.screenTitle + ' deleted Successfully</div>';
           sessionStorage.setItem('VPPrdts', JSON.stringify(this.vpProducts));
           sessionStorage.setItem('VPCreatStatus', this.screenTitle + ' deleted Successfully');
-          this.router.navigate(['/', 'customer', this.customerId, 'vp', this.vpId, this.segmentName]);
+          this.router.navigate(['/', 'vp', this.vpId, this.segmentName]);
         });
       });
     }

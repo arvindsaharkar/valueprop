@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-md-10 col-lg-10">
-    <h3 class="page-title">{{oper}} Value Proposition</h3>
+    <h3 class="page-title">{{oper}} Business Model</h3>
   </div>
   <div class="col-md-2 col-lg-2 text-right"></div>
 </div>
 <form ngNativeValidate role="form" #customerForm="ngForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <label for="vpName">Name </label>
-    <input type="text" class="form-control" name="vpName" id="vpName" [(ngModel)]="vp.valuePropositionName"
+    <label for="bmName">Name </label>
+    <input type="text" class="form-control" name="bmName" id="bmName" [(ngModel)]="bm.businessModelName"
       required #name="ngModel" />
       <!-- <div [hidden]="name.valid || name.pristine"
           class="alert alert-danger">
@@ -15,14 +15,14 @@
     </div> -->
   </div>
   <div class="form-group">
-    <label for="vpDesc">Description </label>
-    <textarea class="form-control" name="vpDesc" id="vpDesc" [(ngModel)]="vp.valuePropositionDesc"
-      required #desc="ngModel">{{vp.valuePropositionDesc}}</textarea>
+    <label for="bmDesc">Description </label>
+    <textarea class="form-control" name="bmDesc" id="bmDesc" [(ngModel)]="bm.businessModelDesc"
+      required #desc="ngModel">{{bm.businessModelDesc}}</textarea>
       <!-- <div [hidden]="desc.valid || desc.pristine"
           class="alert alert-danger">
       Description is required
     </div> -->
   </div>
   <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
-  <button type="button" class="btn btn-secondary" [routerLink]="['/','vp']">Back</button>
+  <button type="button" class="btn btn-secondary" [routerLink]="['/','bm']">Back</button>
 </form>

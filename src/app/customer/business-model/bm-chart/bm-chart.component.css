@@ -1,0 +1,33 @@
+[class*="col-"] {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.width20{width:20%; padding-bottom:15px}
+
+.padd-btm-15{padding-bottom:15px !important}
+
+.padd-top-bottom-0{padding-top:0; padding-bottom:0; border:0}
+
+.border-black{border:1px solid #454545}
+.border-black-top{border-top:1px solid #454545}
+.close-btn-chart, .add-btn-chart{    
+    position: absolute;
+    right: 5px;
+    font-weight: bold;}
+.add-btn-chart{ font-size:16px; top: 0; color: #08d808}
+
+.always-show{
+    display:block !important;
+  }
+  
+  .modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .75;
+    z-index: 900;
+  }
+  

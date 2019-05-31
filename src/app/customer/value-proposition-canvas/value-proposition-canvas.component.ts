@@ -42,19 +42,18 @@ export class ValuePropositionCanvasComponent implements OnInit {
       this.canvasService.deleteValueProposition(vpId).subscribe((res) => {
         this.getValueProposition();
         this.msg = '<div class="alert alert-success">Value Proposition deleted successfully</div>';
-        this.router.navigate(['/']);
+        this.router.navigate(['/', 'vp']);
       });
     }
   }
 
   searchVPFunction() {
-    if(this.searchVP == '') {
+    if( this.searchVP === '') {
       this.getValueProposition();
     } else {
       this.canvasService.getValuePropositionByKeywords(this.searchVP).subscribe((res) => {
         this.canvases = res;
       });
     }
-    
   }
 }

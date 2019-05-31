@@ -1,4 +1,3 @@
-import { ValuePropositionCanvasModule } from './customer/value-proposition-canvas/value-proposition-canvas.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -10,15 +9,20 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { ValuePropositionCanvasComponent } from './customer/value-proposition-canvas/value-proposition-canvas.component';
 import { AppGlobal } from './shared/app.global';
-import { AlertComponent } from './shared/alert/alert.component';
+import { CustomerComponent } from './customer/customer.component';
+import { BusinessModelComponent } from './customer/business-model/business-model.component';
+import { ValuePropositionCanvasModule } from './customer/value-proposition-canvas/value-proposition-canvas.module';
+import { BmEditComponent } from './customer/business-model/bm-edit/bm-edit.component';
+import { BmChartComponent } from './customer/business-model/bm-chart/bm-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ValuePropositionCanvasComponent,
-    AlertComponent
+    CustomerComponent,
+    BusinessModelComponent,
+    BmEditComponent,
+    BmChartComponent
   ],
   imports: [
     BrowserModule,

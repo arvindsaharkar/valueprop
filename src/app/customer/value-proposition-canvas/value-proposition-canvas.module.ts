@@ -9,6 +9,7 @@ import { ValuePropositionDetailsComponent } from './value-proposition-details/va
 import { VpProductsComponent } from './value-proposition-details/vp-products/vp-products.component';
 import { VpProductEditComponent } from './value-proposition-details/vp-products/vp-product-edit/vp-product-edit.component';
 import { VpChartComponent } from './vp-chart/vp-chart.component';
+import { ValuePropositionCanvasComponent } from './value-proposition-canvas.component';
 
 
 
@@ -18,7 +19,8 @@ import { VpChartComponent } from './vp-chart/vp-chart.component';
     ValuePropositionDetailsComponent,
     VpProductEditComponent,
     VpProductsComponent,
-    VpChartComponent
+    VpChartComponent,
+    ValuePropositionCanvasComponent
   ],
   imports: [
     CommonModule,
